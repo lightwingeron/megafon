@@ -1,0 +1,552 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-29T10:00:33.910980" rpa="false" schemaversion="5">
+<suite id="s1" name="Smoke Tests" source="C:\Users\dimka\PycharmProjects\Megafon\tests\smoke_tests.robot">
+<test id="s1-t1" name="SMOKE-01: Главная страница доступна" line="9">
+<kw name="Open Megafon Site" owner="megafon_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:34.177204" level="INFO">Opening browser 'chrome' to base url 'https://megafon.ru'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:00:34.176914" elapsed="5.029135"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.206384" elapsed="0.068377"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.275073" elapsed="0.001920"/>
+</kw>
+<kw name="Close Cookie Banner" owner="megafon_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:39.278559" level="INFO">Clicking element '//*[@id="mount"]/div/div/div/div[3]/div/div/div/button'.</msg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.277976" elapsed="0.097097"/>
+</kw>
+<arg>Click Element</arg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.277728" elapsed="0.097427"/>
+</kw>
+<doc>Закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:39.277340" elapsed="0.097876"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:39.677652" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/mainpage.png"&gt;&lt;img src="screenshots/mainpage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/mainpage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.375325" elapsed="0.302434"/>
+</kw>
+<doc>Перейти на главную страницу мегафона, закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:34.176157" elapsed="5.501708"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:39.682340" level="INFO">Page title is 'Официальный сайт МегаФона, Санкт-Петербург и область | Ведущий мобильный оператор России'.</msg>
+<arg>Официальный сайт МегаФона, Санкт-Петербург и область | Ведущий мобильный оператор России</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.678172" elapsed="0.004262"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:39.693903" level="INFO">Current page contains element '//*[@id="mount"]/div/div/div/div[1]/header/div[4]/div[2]/button/div/div/span'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.682709" elapsed="0.011273"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-29T10:00:39.694313" elapsed="2.338941"/>
+</kw>
+<doc>Проверка доступности главной страницы</doc>
+<tag>CRITICAL</tag>
+<status status="PASS" start="2025-07-29T10:00:34.175224" elapsed="7.858257"/>
+</test>
+<test id="s1-t2" name="SMOKE-02: Авторизация пользователя" line="15">
+<kw name="Open Megafon Site" owner="megafon_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:42.034804" level="INFO">Opening browser 'chrome' to base url 'https://megafon.ru'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:00:42.034649" elapsed="3.667881"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-29T10:00:45.702760" elapsed="0.062635"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-29T10:00:45.765622" elapsed="0.001371"/>
+</kw>
+<kw name="Close Cookie Banner" owner="megafon_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:45.768415" level="INFO">Clicking element '//*[@id="mount"]/div/div/div/div[3]/div/div/div/button'.</msg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:45.768113" elapsed="0.130475"/>
+</kw>
+<arg>Click Element</arg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-29T10:00:45.767631" elapsed="0.131074"/>
+</kw>
+<doc>Закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:45.767255" elapsed="0.131525"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:46.177097" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/mainpage.png"&gt;&lt;img src="screenshots/mainpage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/mainpage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:00:45.898922" elapsed="0.278277"/>
+</kw>
+<doc>Перейти на главную страницу мегафона, закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:42.034437" elapsed="4.142837"/>
+</kw>
+<kw name="Perform Login" owner="megafon_keywords">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:46.178564" level="INFO">Clicking element '//*[@id="mount"]/div/div/div/div[1]/header/div[4]/div[2]/button/div/div/span'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:46.178400" elapsed="1.786969"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_REDIRECT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:00:47.965594" elapsed="0.439921"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:48.406013" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div/div/div[1]/div[1]/div/div/div[1]/div[1]/div/div/div/div/div[3]/div/button/div'.</msg>
+<arg>${LOGIN_REDIRECT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.405731" elapsed="0.086404"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_FIELD}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.492349" elapsed="0.015213"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:48.508037" level="INFO">Typing text '9161234567' into text field '//*[@id="root"]/div/div/div/div/div/div[1]/div[1]/div/div/div[1]/div[2]/form/div/div[1]/div[1]/div/div[1]/input'.</msg>
+<arg>${LOGIN_FIELD}</arg>
+<arg>${login}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.507763" elapsed="0.136356"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:48.644649" level="INFO">Typing password into text field '//*[@id="root"]/div/div/div/div/div/div[1]/div[1]/div/div/div[1]/div[2]/form/div/div[1]/div[2]/div/div[1]/input'.</msg>
+<msg time="2025-07-29T10:00:48.680431" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.644330" elapsed="0.105010"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:48.749838" level="INFO">Clicking element '//*[@id="root"]/div/div/div/div/div/div[1]/div[1]/div/div/div[1]/div[2]/form/div/button'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.749569" elapsed="0.084558"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${LOGIN_ERROR}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:00:48.834315" elapsed="2.083907"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:51.391314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/authorization.png"&gt;&lt;img src="screenshots/authorization.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/authorization.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:00:50.918417" elapsed="0.473014"/>
+</kw>
+<arg>${SMOKE_USER.login}</arg>
+<arg>${SMOKE_USER.password}</arg>
+<doc>Открыть главную страницу, перейти в окно авторизации, авторизоваться с тестовыми данными.
+Так как нет возможности использовать реальные данные ожидаем ошибку.</doc>
+<status status="PASS" start="2025-07-29T10:00:46.177589" elapsed="5.213955"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:51.399110" level="INFO">Current page contains element '//*[@id="root"]/div/div/div/div/div/div[1]/div[1]/div/div[2]/div/div/div'.</msg>
+<arg>${LOGIN_ERROR}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:00:51.391857" elapsed="0.007363"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-29T10:00:51.399623" elapsed="2.396474"/>
+</kw>
+<doc>Проверка входа в ЛК с тестовыми данными</doc>
+<tag>CRITICAL</tag>
+<status status="PASS" start="2025-07-29T10:00:42.033957" elapsed="11.762362"/>
+</test>
+<test id="s1-t3" name="SMOKE-03: Проверка тарифов" line="21">
+<kw name="Open Megafon Site" owner="megafon_keywords" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:53.797752" level="INFO">Opening browser 'chrome' to base url 'https://megafon.ru'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:00:53.797542" elapsed="4.352846"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.150596" elapsed="0.065162"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.216001" elapsed="0.001148"/>
+</kw>
+<kw name="Close Cookie Banner" owner="megafon_keywords">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:58.218022" level="INFO">Clicking element '//*[@id="mount"]/div/div/div/div[3]/div/div/div/button'.</msg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.217765" elapsed="0.096771"/>
+</kw>
+<arg>Click Element</arg>
+<arg>${COOKIE_BANNER}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.217624" elapsed="0.097029"/>
+</kw>
+<doc>Закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:58.217355" elapsed="0.097361"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:58.650882" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/mainpage.png"&gt;&lt;img src="screenshots/mainpage.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/mainpage.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.314834" elapsed="0.336139"/>
+</kw>
+<doc>Перейти на главную страницу мегафона, закрыть куки баннер</doc>
+<status status="PASS" start="2025-07-29T10:00:53.797281" elapsed="4.853774"/>
+</kw>
+<kw name="Select And Verify All Tariffs" owner="megafon_keywords">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2025-07-29T10:00:58.652020" level="INFO">@{tariff_buttons} = [ xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/div[2]/div[3]/div/div[3]/a[1] | xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/...</msg>
+<var>@{tariff_buttons}</var>
+<arg>${TARIFF_1_SELECT_BUTTON}</arg>
+<arg>${TARIFF_2_SELECT_BUTTON}</arg>
+<arg>${TARIFF_3_SELECT_BUTTON}</arg>
+<arg>${TARIFF_4_SELECT_BUTTON}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.651748" elapsed="0.000304"/>
+</kw>
+<for flavor="IN ENUMERATE">
+<iter>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:58.652598" level="INFO">Opening url 'https://megafon.ru'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:00:58.652478" elapsed="0.915926"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Тарифы</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:00:59.568586" elapsed="0.017939"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:00:59.586743" elapsed="0.022351"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:00:59.609432" level="INFO">Clicking element 'xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/div[2]/div[3]/div/div[3]/a[1]'.</msg>
+<arg>${button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:00:59.609246" elapsed="1.295614"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ваш заказ</arg>
+<arg>timeout=15</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.905055" elapsed="0.020515"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-29T10:01:00.925908" level="INFO">Успешно перешли к оформлению тарифа</msg>
+<arg>Успешно перешли к оформлению тарифа</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.925768" elapsed="0.000189"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:00.941836" level="INFO">Current page contains element '//*[@id="services"]/div[1]/div[1]'.</msg>
+<arg>${SIM_TYPE}</arg>
+<arg>${DELIVERY_METHOD}</arg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.926229" elapsed="0.015721"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:00.957267" level="INFO">Current page contains element '//*[@id="services-delivery"]/div/div/div/div[2]/div/div/div[1]'.</msg>
+<arg>${DELIVERY_METHOD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.942142" elapsed="0.015249"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:00.973386" level="INFO">Current page contains element '//*[@id="mount"]/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div[3]/button'.</msg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.957596" elapsed="0.015890"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:01.142285" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/tariff_1_order_page.png"&gt;&lt;img src="screenshots/tariff_1_order_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/tariff_${index+1}_order_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:01:00.973659" elapsed="0.168738"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-07-29T10:01:01.142564" elapsed="0.065846"/>
+</kw>
+<var name="${index}">0</var>
+<var name="${button_locator}">xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[1]/div/div/div[2]/div[3]/div/div[3]/a[1]</var>
+<status status="PASS" start="2025-07-29T10:00:58.652372" elapsed="2.556166"/>
+</iter>
+<iter>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:01.209558" level="INFO">Opening url 'https://megafon.ru'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:01:01.209108" elapsed="0.579781"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Тарифы</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:01.789213" elapsed="0.024499"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:01:01.813926" elapsed="0.090154"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:01.904587" level="INFO">Clicking element 'xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div[3]/a[1]'.</msg>
+<arg>${button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:01:01.904308" elapsed="0.648254"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ваш заказ</arg>
+<arg>timeout=15</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.552713" elapsed="0.015026"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-29T10:01:02.568157" level="INFO">Успешно перешли к оформлению тарифа</msg>
+<arg>Успешно перешли к оформлению тарифа</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.567953" elapsed="0.000270"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:02.577374" level="INFO">Current page contains element '//*[@id="services"]/div[1]/div[1]'.</msg>
+<arg>${SIM_TYPE}</arg>
+<arg>${DELIVERY_METHOD}</arg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.568371" elapsed="0.009098"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:02.585884" level="INFO">Current page contains element '//*[@id="services-delivery"]/div/div/div/div[2]/div/div/div[1]'.</msg>
+<arg>${DELIVERY_METHOD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.577640" elapsed="0.008330"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:02.594494" level="INFO">Current page contains element '//*[@id="mount"]/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div[3]/button'.</msg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.586105" elapsed="0.008501"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:02.761892" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/tariff_2_order_page.png"&gt;&lt;img src="screenshots/tariff_2_order_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/tariff_${index+1}_order_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.594800" elapsed="0.167186"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.762139" elapsed="0.073088"/>
+</kw>
+<var name="${index}">1</var>
+<var name="${button_locator}">xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/div[2]/div/div[3]/a[1]</var>
+<status status="PASS" start="2025-07-29T10:01:01.208821" elapsed="1.626494"/>
+</iter>
+<iter>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:02.835822" level="INFO">Opening url 'https://megafon.ru'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:01:02.835666" elapsed="0.674994"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Тарифы</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:03.510810" elapsed="0.025541"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:01:03.536497" elapsed="0.029869"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:03.566831" level="INFO">Clicking element 'xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[2]/div/div[3]/a[1]'.</msg>
+<arg>${button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:01:03.566570" elapsed="0.720749"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ваш заказ</arg>
+<arg>timeout=15</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.287595" elapsed="0.022035"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-29T10:01:04.310009" level="INFO">Успешно перешли к оформлению тарифа</msg>
+<arg>Успешно перешли к оформлению тарифа</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.309870" elapsed="0.000187"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:04.317526" level="INFO">Current page contains element '//*[@id="services"]/div[1]/div[1]'.</msg>
+<arg>${SIM_TYPE}</arg>
+<arg>${DELIVERY_METHOD}</arg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.310172" elapsed="0.007456"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:04.338407" level="INFO">Current page contains element '//*[@id="services-delivery"]/div/div/div/div[2]/div/div/div[1]'.</msg>
+<arg>${DELIVERY_METHOD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.317808" elapsed="0.020699"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:04.344696" level="INFO">Current page contains element '//*[@id="mount"]/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div[3]/button'.</msg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.338682" elapsed="0.006104"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:04.530042" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/tariff_3_order_page.png"&gt;&lt;img src="screenshots/tariff_3_order_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/tariff_${index+1}_order_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.344949" elapsed="0.185207"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-07-29T10:01:04.530332" elapsed="0.696154"/>
+</kw>
+<var name="${index}">2</var>
+<var name="${button_locator}">xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[3]/div/div/div[2]/div[2]/div/div[3]/a[1]</var>
+<status status="PASS" start="2025-07-29T10:01:02.835538" elapsed="2.391014"/>
+</iter>
+<iter>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:05.226923" level="INFO">Opening url 'https://megafon.ru'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-07-29T10:01:05.226804" elapsed="1.671595"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Тарифы</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:06.898590" elapsed="0.014919"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${button_locator}</arg>
+<arg>timeout=10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-07-29T10:01:06.913729" elapsed="0.024290"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:06.938705" level="INFO">Clicking element 'xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[4]/div/div/div[2]/div[2]/div/div[3]/a[1]'.</msg>
+<arg>${button_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-07-29T10:01:06.938330" elapsed="0.589653"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Ваш заказ</arg>
+<arg>timeout=15</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.528225" elapsed="0.026689"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-07-29T10:01:07.555254" level="INFO">Успешно перешли к оформлению тарифа</msg>
+<arg>Успешно перешли к оформлению тарифа</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.555113" elapsed="0.000189"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:07.566927" level="INFO">Current page contains element '//*[@id="services"]/div[1]/div[1]'.</msg>
+<arg>${SIM_TYPE}</arg>
+<arg>${DELIVERY_METHOD}</arg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.555409" elapsed="0.011617"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:07.582551" level="INFO">Current page contains element '//*[@id="services-delivery"]/div/div/div/div[2]/div/div/div[1]'.</msg>
+<arg>${DELIVERY_METHOD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.567194" elapsed="0.015462"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:07.595450" level="INFO">Current page contains element '//*[@id="mount"]/div/div/div/main/div/div/div/div/div/div/div[2]/div/div/div[3]/button'.</msg>
+<arg>${ORDER_BUTTON}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.582826" elapsed="0.012734"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-07-29T10:01:07.785986" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="screenshots/tariff_4_order_page.png"&gt;&lt;img src="screenshots/tariff_4_order_page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${SCREENSHOTS_DIR}/tariff_${index+1}_order_page.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.595737" elapsed="0.190357"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.786367" elapsed="0.115631"/>
+</kw>
+<var name="${index}">3</var>
+<var name="${button_locator}">xpath=//*[@id="mount"]/div/div/div/main/div[1]/div[3]/div/div/div/div/div/div/div/div[2]/div[4]/div/div/div[2]/div[2]/div/div[3]/a[1]</var>
+<status status="PASS" start="2025-07-29T10:01:05.226713" elapsed="2.675401"/>
+</iter>
+<var>${index}</var>
+<var>${button_locator}</var>
+<value>@{tariff_buttons}</value>
+<status status="PASS" start="2025-07-29T10:00:58.652137" elapsed="9.250063"/>
+</for>
+<doc>Последовательно проверяет все тарифные кнопки "Выбрать", которые видны пользователю
+при открытии страницы</doc>
+<status status="PASS" start="2025-07-29T10:00:58.651473" elapsed="9.250915"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-07-29T10:01:07.902874" elapsed="2.389885"/>
+</kw>
+<doc>Проверяет все видимые пользователю тарифы</doc>
+<tag>CRITICAL</tag>
+<status status="PASS" start="2025-07-29T10:00:53.796799" elapsed="16.496205"/>
+</test>
+<status status="PASS" start="2025-07-29T10:00:33.912232" elapsed="36.381595"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="3" fail="0" skip="0">CRITICAL</stat>
+</tag>
+<suite>
+<stat name="Smoke Tests" id="s1" pass="3" fail="0" skip="0">Smoke Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
